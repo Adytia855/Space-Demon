@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissor Advanced</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/?size=100&id=21swa-B9lOSF&format=png&color=000000">
+  <link rel="stylesheet" href="css/output.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <audio id="bgm" src="sound/bgm.mp3" loop></audio>
+  <audio id="gameWin" src="sound/game-win.mp3"></audio>
+  <audio id="gameLose" src="sound/game-lose.mp3"></audio>
+
+</head>
+<body class="text-white font-sans flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
+  <div class="w-full max-w-xl text-center space-y-8 px-4">
+    <!-- Title -->
+    <h1 class="text-5xl font-extrabold tracking-widest pulse-rainbow">BEAT THE SPACE DEMON</h1>
+
+    <!-- Health Bars -->
+    <div id="healthWrapper" class="flex justify-between items-center gap-8 w-full opacity-0 scale-90 ">
+      <div class="w-full ">
+        <div class="text-left mb-1 font-bold text-sm text-cyan-400 pulse-rainbow">Space Demon</div>
+        <div class="w-full bg-gray-700 h-4 rounded-full overflow-hidden rainbow-border">
+          <div id="healthComputer" class="bg-red-500 h-full transition-all duration-300 " style="width: 100%;"></div>
+        </div>
+      </div>
+      <div class="w-full">
+        <div class="text-right mb-1 font-bold text-sm text-pink-400 pulse-rainbow">Player</div>
+        <div class="w-full bg-gray-700 h-4 rounded-full overflow-hidden rainbow-border">
+          <div id="healthPlayer" class="bg-green-500 h-full health-glow transition-all duration-300" style="width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Area -->
+    <div class="rounded-3xl border-4 p-6 shadow-2xl space-y-6 rainbow-border">
+
+      <!-- Komputer Pilihan -->
+      <div class="flex flex-col items-center space-y-2">
+        <img src="img/devil.jpeg" alt="Komputer Pilihan" class="img-computer w-24 h-24 rounded-full fire-border">
+      </div>
+
+      <!-- VS Info -->
+      <div class="info min-h-[70px] flex flex-col justify-center items-center text-center gap-4  font-bold  py-2 px-6 rounded-full w-fit mx-auto border-2 border-white bg-gradient-to-r from-cyan-400 to-pink-500 text-3xl transition-all duration-300 ease-in-out">
+        ⚔️
+        VS
+        ⚔️
+      </div>
+
+      <!-- Player  -->
+      <div class="flex flex-col items-center space-y-4 player">
+        <!-- Saber -->
+        <div class="flex justify-center gap-6">
+          <div class="relative group">
+            <img src="img/saber.jpeg" alt="rock" class="w-20 h-20 rounded-full border-4 border-pink-500 cursor-pointer transition-all duration-300 btn-glow rock">
+            <div class="absolute top-4 mt-2 left-1/2 transform -translate-x-1/2  text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 pulse-rainbow-border font-extrabold">
+              Saber
+            </div>
+          </div>
+          
+          <!-- Raygun -->
+          <div class="relative group">
+            <img src="img/gun.jpeg" alt="paper" class="w-20 h-20 rounded-full border-4 border-pink-500 cursor-pointer transition-all duration-300 btn-glow paper">
+            <div class="absolute top-2 mt-2 left-1/2 transform -translate-x-1/2  text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 pulse-rainbow-border font-extrabold">
+              Ray Gun
+            </div>
+          </div>
+          
+          <!-- Artillery -->
+          <div class="relative group">
+            <img src="img/ufo.jpeg" alt="scissor" class="w-20 h-20 rounded-full border-4 border-pink-500 cursor-pointer transition-all duration-300 btn-glow scissor">
+            <div class="absolute top-4 mt-2 left-1/2 transform -translate-x-1/2  text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 pulse-rainbow-border font-extrabold">
+              Artillery
+            </div>
+          </div>
+        </div>
+
+        <!-- Player  -->
+        <div class="flex justify-center gap-6">
+          <!-- Space Magic -->
+          <div class="relative group">
+            <img src="img/magic.jpeg" alt="lizard" class="w-20 h-20 rounded-full border-4 border-pink-500 cursor-pointer transition-all duration-300 btn-glow lizard">
+            <div class="absolute top-2 mt-2 left-1/2 transform -translate-x-1/2  text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 pulse-rainbow-border font-extrabold">
+              Space Magic
+            </div>
+          </div>
+          <!-- Space Monster -->
+          <div class="relative group">
+            <img src="img/monster.jpeg" alt="spock" class="w-20 h-20 rounded-full border-4 border-pink-500 cursor-pointer transition-all duration-300 btn-glow spock">
+            <div class="absolute top-2 mt-2 left-1/2 transform -translate-x-1/2  text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition duration-300 pulse-rainbow-border font-extrabold">
+              Space Monster
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center mt-6">
+        <button id="resetGame" class="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all fire-border hidden">
+          Rematch?
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center mt-10 text-sm text-gray-600">
+    <span>❤️</span><span class="glow-text"> Made with love by</span> <span class="font-semibold text-white">Adytia</span>
+  </footer>
+  
+  
+  <script src="js/rpca.js"></script>
+</body>
+</html>
