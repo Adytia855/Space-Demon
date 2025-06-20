@@ -1,6 +1,14 @@
 # 🛡️ Space Demon
+![GitHub last commit](https://img.shields.io/github/last-commit/Adytia855/Space-Demon?color=blue&style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/Adytia855/Space-Demon?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/Adytia855/Space-Demon?style=flat-square)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Adytia855/Space-Demon?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 
-> **A neon‑soaked, five‑weapon twist on the classic Rock Paper Scissors — defeat the Space Demon before it drains your health!**
+## 🖼️ Preview
+
+![Space Demon Gameplay Screenshot](img/preview.jpg)
+
 
 ## Table of Contents
 
