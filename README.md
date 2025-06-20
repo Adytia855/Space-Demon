@@ -2,12 +2,6 @@
 
 > **A neon‑soaked, five‑weapon twist on the classic Rock Paper Scissors — defeat the Space Demon before it drains your health!**
 
-&#x20; &#x20;
-
----
-
----
-
 ## Table of Contents
 
 1. [Features](#features)
